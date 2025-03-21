@@ -5,6 +5,7 @@ steps:
   - deploy
   - fetch_ci # Nom de votre fonction
   - --runtime=python312
+  - --requirements=requirements.txt
   - --trigger-http
   - --allow-unauthenticated
   - --region=us-central1 # Remplacez par votre region (ex: us-central1)
