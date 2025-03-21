@@ -7,6 +7,6 @@ steps:
   - --runtime=python312
   - --trigger-http
   - --allow-unauthenticated
-  - --region=global # Remplacez par votre region (ex: us-central1)
+  - --region=us-central1 # Remplacez par votre region (ex: us-central1)
 options:
   logging : CLOUD_LOGGING_ONLY
