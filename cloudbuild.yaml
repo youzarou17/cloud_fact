@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - fetch_ci # Nom de votre fonction
+  - --runtime=python312
+  - --trigger-http
+  - --allow-unauthenticated
+  - --requirements=requirements.txt
+  - --region=YOUR_REGION # Remplacez par votre region (ex: us-central1)
