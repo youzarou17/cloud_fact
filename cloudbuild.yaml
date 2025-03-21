@@ -12,7 +12,7 @@ steps:
       - container
       - clusters
       - create
-      - clusterLab # Remplacez par le nom de votre cluster
+      - clusterlab # Remplacez par le nom de votre cluster
       - --zone=us-central1-a # Remplacez par la zone de votre cluster (ex: us-central1-a)
       - --machine-type=e2-medium
       - --num-nodes=1
@@ -24,7 +24,7 @@ steps:
       - GKE.yaml # Remplacez par le nom de votre fichier de déploiement Kubernetes
   env:
       - CLOUDSDK_COMPUTE_ZONE=us-central1-a # Remplacez par la zone de votre cluster
-      - CLOUDSDK_CONTAINER_CLUSTER=YOUclusterLab # Remplacez par le nom de votre cluster
+      - CLOUDSDK_CONTAINER_CLUSTER=clusterlab # Remplacez par le nom de votre cluster
 images:
   - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
 options:
