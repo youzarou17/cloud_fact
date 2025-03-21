@@ -1,13 +1,13 @@
 steps:
+# build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECTD_ID/$REPO_NAME:$SHORT_SHA']
+# Push the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECTD_ID/$REPO_NAME:$SHORT_SHA']
+# Deploy the container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - functions
-  - deploy
-  - fetch_ci # Nom de votre fonction
-  - --runtime=python312
-  - --requirements=requirements.txt
-  - --trigger-http
-  - --allow-unauthenticated
-  - --region=us-central1 # Remplacez par votre region (ex: us-central1)
-options:
-  logging : CLOUD_LOGGING_ONLY
+  args: ['run', 'deploy', 'my-service', '--image', 'gcr.io/$PROJECTD_ID/$REPO_NAME:$SHORT_SHA', '--platform', 'managed', '--region', 'us-central1', '--allow-unauthenticated']
+images:
+- 'gcr.io/$PROJECTD_ID/$REPO_NAME:$SHORT_SHA'
+
