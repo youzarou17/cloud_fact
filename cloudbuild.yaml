@@ -8,4 +8,4 @@ steps:
   - --trigger-http
   - --allow-unauthenticated
   - --requirements=requirements.txt
-  - --region=YOUR_REGION # Remplacez par votre region (ex: us-central1)
+  - --region=global # Remplacez par votre region (ex: us-central1)
