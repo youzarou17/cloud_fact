@@ -15,7 +15,7 @@ steps:
       - clusterLab # Remplacez par le nom de votre cluster
       - --zone=us-central1-a # Remplacez par la zone de votre cluster (ex: us-central1-a)
       - --machine-type=e2-medium
-      - --num-nodes=1'
+      - --num-nodes=1
  # Deploy the application to GKE
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
